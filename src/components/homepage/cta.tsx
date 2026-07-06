@@ -1,46 +1,98 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 export function CTA() {
   return (
-    <section className="py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(16,185,129,0.15),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(139,92,246,0.1),transparent_50%)]" />
-
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display text-white tracking-tight mb-6">
-            Ready to transform
-            <br />
-            your workflow?
+    <section className="bg-black pt-32 pb-0 w-full relative border-t border-gray-900/50">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-32 grid md:grid-cols-2 gap-16 lg:gap-24">
+        {/* Left Side */}
+        <div className="flex flex-col justify-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-6">
+            Ready to build<br />
+            something<br />
+            that pays?
           </h2>
-          <p className="text-lg text-gray-400 max-w-xl mx-auto mb-10">
-            Join thousands of professionals who use ToolStack to work
-            smarter, faster, and better every day.
+          <p className="text-[#a1a1aa] text-sm md:text-base font-medium">
+            Tell us about your software requirements.
           </p>
-          <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
-            <Link
-              href="/login"
-              className="group px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold text-sm hover:bg-gray-100 transition-all duration-300 hover:shadow-[0_12px_40px_rgba(255,255,255,0.1)] flex items-center gap-2"
+        </div>
+
+        {/* Right Side - Form */}
+        <div className="flex flex-col justify-center w-full max-w-lg ml-auto">
+          <form className="flex flex-col gap-10">
+            {/* Name Field */}
+            <div className="flex flex-col gap-3">
+              <label className="text-[10px] font-bold text-white uppercase tracking-[0.15em]">
+                Your Name
+              </label>
+              <input 
+                type="text" 
+                placeholder="Enter your name" 
+                className="bg-transparent border-b border-gray-800 pb-3 text-sm text-white placeholder:text-gray-700 focus:outline-none focus:border-[#a855f7] transition-colors"
+              />
+            </div>
+            
+            {/* Email Field */}
+            <div className="flex flex-col gap-3">
+              <label className="text-[10px] font-bold text-white uppercase tracking-[0.15em]">
+                Your Email
+              </label>
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="bg-transparent border-b border-gray-800 pb-3 text-sm text-white placeholder:text-gray-700 focus:outline-none focus:border-[#a855f7] transition-colors"
+              />
+            </div>
+
+            {/* Message Field */}
+            <div className="flex flex-col gap-3">
+              <label className="text-[10px] font-bold text-white uppercase tracking-[0.15em]">
+                Describe Your Bottleneck / Goals
+              </label>
+              <input 
+                type="text" 
+                placeholder="Type here..." 
+                className="bg-transparent border-b border-gray-800 pb-3 text-sm text-white placeholder:text-gray-700 focus:outline-none focus:border-[#a855f7] transition-colors"
+              />
+            </div>
+
+            {/* Submit Button */}
+            <button 
+              type="button" 
+              className="mt-6 flex items-center justify-center gap-2 w-full py-5 rounded-full border border-[#3b0764] bg-[#2e1065]/20 text-white text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-[#3b0764]/60 transition-colors"
             >
-              Get Started
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link
-              href="/contact"
-              className="px-8 py-4 text-white rounded-xl font-semibold text-sm border border-white/20 hover:border-white/40 hover:bg-white/5 transition-all duration-200"
-            >
-              Talk to Sales
-            </Link>
+              Send Now! <ArrowUpRight className="w-3 h-3 text-[#a855f7]" />
+            </button>
+          </form>
+        </div>
+      </div>
+
+      {/* Marquee Ticker */}
+      <div className="w-full border-t border-b border-gray-900/60 bg-black overflow-hidden py-5 flex whitespace-nowrap">
+        <motion.div 
+          className="flex gap-10 items-center shrink-0 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
+        >
+          {/* Group 1 */}
+          <div className="flex gap-10 items-center shrink-0">
+             {Array.from({ length: 10 }).map((_, i) => (
+              <div key={`a-${i}`} className="flex items-center gap-10">
+                <span className="text-gray-300 font-extrabold text-[13px] tracking-widest">contact@profitagentz.com</span>
+                <span className="text-[#a855f7] font-black text-sm">x</span>
+              </div>
+            ))}
+          </div>
+          {/* Group 2 (Duplicate for seamless loop) */}
+          <div className="flex gap-10 items-center shrink-0">
+             {Array.from({ length: 10 }).map((_, i) => (
+              <div key={`b-${i}`} className="flex items-center gap-10">
+                <span className="text-gray-300 font-extrabold text-[13px] tracking-widest">contact@profitagentz.com</span>
+                <span className="text-[#a855f7] font-black text-sm">x</span>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
