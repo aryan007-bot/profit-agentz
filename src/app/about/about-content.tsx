@@ -363,7 +363,7 @@ export function AboutContent() {
                   <span className="text-purple-400">Get in Touch</span>
                 </h3>
                 <p className="max-w-sm text-sm leading-relaxed text-zinc-400 font-sans font-light">
-                  Tell us about your project—we'll bring the tools, vision, and energy to make it real.
+                  Tell us about your project—we&apos;ll bring the tools, vision, and energy to make it real.
                 </p>
               </div>
               <div className="relative z-10 mt-10">
@@ -386,10 +386,10 @@ export function AboutContent() {
           <div className="relative mb-16 flex flex-col items-center text-center">
             <div className="pointer-events-none absolute -top-10 h-28 w-80 rounded-full bg-purple-500/5 blur-[80px]" />
             <h2 className="mb-4 select-none font-black leading-tight text-zinc-900 text-3xl sm:text-4xl lg:text-5xl uppercase font-display">
-              Let's build something bold
+              Let&apos;s build something bold
             </h2>
             <p className="text-lg leading-relaxed text-zinc-500 font-sans font-light max-w-xl">
-              Have a project or idea? Tell us about it below and let's start creating.
+              Have a project or idea? Tell us about it below and let&apos;s start creating.
             </p>
             <div className="mt-6 h-[2px] w-16 bg-gradient-to-r from-transparent via-purple-500 to-transparent" />
           </div>
@@ -407,7 +407,7 @@ export function AboutContent() {
                   Got a project<br /> in mind?
                 </h2>
                 <p className="max-w-sm text-sm leading-relaxed text-zinc-400 font-sans font-light">
-                  Let's make something happen together
+                  Let&apos;s make something happen together
                 </p>
               </div>
               <div className="hidden lg:block text-left">
