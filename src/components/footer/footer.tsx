@@ -1,116 +1,55 @@
 import Link from "next/link";
-import { Zap, Instagram, Linkedin, Facebook } from "lucide-react";
-import { footerLinks, socialLinks, toolNav } from "@/lib/constants/navigation";
-
-const socialIcons: Record<string, React.ComponentType<any>> = {
-  Instagram: Instagram,
-  LinkedIn: Linkedin,
-  Facebook: Facebook,
-};
+import { Instagram, Linkedin, Facebook } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-gray-950 text-gray-400 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(120,119,198,0.1),transparent_50%)]" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="py-16 grid grid-cols-2 md:grid-cols-5 gap-8">
-          <div className="col-span-2">
-            <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 flex items-center justify-center">
-                <img src="/Untitled_design-removebg-preview.png" alt="ToolStack Logo" className="w-full h-full object-contain" />
-              </div>
-              <span className="font-display font-bold text-xl text-white tracking-tight">
-                ToolStack
-              </span>
-            </Link>
-            <p className="text-sm text-gray-500 max-w-xs leading-relaxed mb-6">
-              Multiple tools unified in one premium platform.
-              Built for professionals who demand excellence.
-            </p>
-            <div className="flex gap-4">
-              {socialLinks.map((link) => {
-                const Icon = socialIcons[link.label];
-                return (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="w-9 h-9 rounded-lg bg-gray-800/50 hover:bg-gray-700 flex items-center justify-center transition-all text-gray-400 hover:text-white"
-                    aria-label={link.label}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {Icon ? <Icon className="w-4.5 h-4.5" /> : link.label[0]}
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Product</h4>
-            <ul className="space-y-3">
-              {footerLinks.product.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Tools</h4>
-            <ul className="space-y-3">
-              {toolNav.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Company</h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <footer className="bg-[#111111] w-full pt-16 flex flex-col overflow-hidden">
+      <div className="w-full border-t border-b border-white/10 py-6 px-6 md:px-12 flex flex-col xl:flex-row items-center justify-between gap-6 text-sm font-medium">
+        {/* Social Icons */}
+        <div className="flex items-center gap-6 text-white w-full xl:w-auto justify-center xl:justify-start">
+          <a href="#" className="hover:text-gray-300 transition-colors">
+            <Linkedin className="w-[1.125rem] h-[1.125rem]" />
+          </a>
+          <a href="#" className="hover:text-gray-300 transition-colors">
+            <svg viewBox="0 0 24 24" className="w-[1.125rem] h-[1.125rem] fill-current" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 24.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+          <a href="#" className="hover:text-gray-300 transition-colors">
+            <Facebook className="w-[1.125rem] h-[1.125rem]" />
+          </a>
+          <a href="#" className="hover:text-gray-300 transition-colors">
+            <Instagram className="w-[1.125rem] h-[1.125rem]" />
+          </a>
         </div>
 
-        <div className="border-t border-gray-800/50 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-600">
-            &copy; {new Date().getFullYear()} ToolStack. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            {footerLinks.legal.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-xs text-gray-600 hover:text-gray-400 transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
+        {/* Links & Copyright */}
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-gray-400 text-xs md:text-sm">
+          <span>&copy; {new Date().getFullYear()} Profit Agentz - All rights reserved</span>
+          <Link href="/coppa" className="hover:text-white transition-colors">COPPA</Link>
+          <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
+          <Link href="/saas-agreement" className="hover:text-white transition-colors">SaaS Agreement</Link>
+          <Link href="/certifications" className="hover:text-white transition-colors">Certifications</Link>
         </div>
+
+        {/* Right Info */}
+        <div className="text-gray-400 flex-shrink-0 w-full xl:w-auto text-center xl:text-right text-xs md:text-sm">
+          Site by NOOON
+        </div>
+      </div>
+
+      {/* Huge Text */}
+      <div className="w-full flex justify-center pt-10 md:pt-16 pb-0 overflow-hidden">
+        <span 
+          className="text-[#b094ff] font-black tracking-tighter whitespace-nowrap select-none"
+          style={{ 
+            fontSize: 'clamp(3rem, 14.5vw, 25rem)',
+            lineHeight: '0.75',
+            marginBottom: '-2%'
+          }}
+        >
+          Profit Agentz
+        </span>
       </div>
     </footer>
   );
