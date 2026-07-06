@@ -36,7 +36,7 @@ export default function PricingPage() {
         }
         // Flatten plans from all tools
         const allPlans = tools.flatMap(tool => tool.plans || []);
-        
+
         // Map backend plans to the PricingTier interface expected by the UI
         const mappedTiers: PricingTier[] = allPlans
           .map((p: any) => ({
@@ -48,12 +48,12 @@ export default function PricingPage() {
             popular: p.tier === 'pro' || p.tier === 'premium',
             cta: (p.prices?.monthly || 0) === 0 ? "Get Started Free" : "Subscribe Now",
           }));
-        
+
         // Sort: Free first, then by price
         mappedTiers.sort((a, b) => a.price.monthly - b.price.monthly);
         // Only keep unique tiers if multiple tools have similar generic tiers (optional, but sorting and deduplicating by tier/name is a good idea)
         const uniqueTiers = Array.from(new Map(mappedTiers.map(t => [t.name, t])).values());
-        
+
         // Mock features based EXACTLY on the Supahub design to match the example image perfectly
         uniqueTiers.forEach(tier => {
           const name = tier.name.toLowerCase();
@@ -140,7 +140,7 @@ export default function PricingPage() {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="inline-block text-[11px] font-bold text-indigo-600 uppercase tracking-widest mb-4">
-              Supahub Pricing
+              Profit Agentz Pricing
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
               Build right features,
@@ -148,7 +148,7 @@ export default function PricingPage() {
               with confidence!
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10 font-medium">
-              Supahub offers a straightforward pricing model, with plans starting at $15 per month.
+              Profit Agentz offers a straightforward pricing model, with plans starting at $15 per month.
             </p>
 
             <div className="flex flex-col items-center justify-center gap-3 mb-16">
@@ -277,7 +277,7 @@ export default function PricingPage() {
           </div>
         </div>
       </section>
-      
+
       {/* FAQ */}
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
