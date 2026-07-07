@@ -71,7 +71,7 @@ export function Ecosystem() {
                      <span className="font-medium">Account Setup</span>
                      <span className="text-gray-400 ml-2">&gt;</span>
                   </div>
-                  <p>Welcome! Let's get your account created:</p>
+                  <p>Welcome! Let&apos;s get your account created:</p>
                   <ol className="list-decimal pl-4 flex flex-col gap-3">
                     <li>Enter your email address and choose a secure password.</li>
                     <li>Verify your email address.</li>
